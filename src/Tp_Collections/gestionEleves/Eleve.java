@@ -1,8 +1,10 @@
 package Tp_Collections.gestionEleves;
 
 import java.util.ArrayList;
+import java.lang.*;
+import java.util.Comparator;
 
-public class Eleve {
+public class Eleve implements Comparable<Eleve> {
     private String nom;
     private ArrayList<Integer> notes;
     private double moyenne;
@@ -17,7 +19,6 @@ public class Eleve {
             int i = 0;
             while (i < notes.size()){
                 moyenne += notes.get(i);
-                System.out.println(moyenne + "\n");
                 i++;
             }
             moyenne /= notes.size();
@@ -40,5 +41,16 @@ public class Eleve {
 
     public String toString(){
         return ("Nom: " + nom +  "\nNotes: " + notes.toString() + "\nMoyenne: " + getMoyenne());
+    }
+
+    @Override
+    public int compareTo(Eleve o) {
+        if (this.moyenne < o.getMoyenne()){
+            return -1;
+        }
+        else if(this.moyenne > o.getMoyenne()){
+            return 1;
+        }
+        return 0;
     }
 }
