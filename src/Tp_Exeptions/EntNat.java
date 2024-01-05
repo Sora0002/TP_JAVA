@@ -1,9 +1,9 @@
 package Tp_Exeptions;
 public class EntNat {
-    int n;
+    private int n;
     public EntNat(int n) throws ErrConst{
         if (n < 0){
-            throw new ErrConst();
+            throw new ErrConst("this value isn't valide: ", n);
         }
         this.n = n;
     }
