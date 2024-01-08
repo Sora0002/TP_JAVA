@@ -1,7 +1,6 @@
 package Tp_Collections.gestionEleves;
 
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.*;
 
 public class GroupeEleves {
     private ArrayList<Eleve> listeEleves;
@@ -20,7 +19,7 @@ public class GroupeEleves {
         Iterator<Eleve> iterator = listeEleves.iterator();
         while (iterator.hasNext()){
             Eleve eleve = iterator.next();
-            if (eleve != null && eleve.getNom() == nom){
+            if (eleve != null && eleve.getNom().equals(nom)){
                 return eleve;
             }
         }
@@ -32,5 +31,14 @@ public class GroupeEleves {
             Eleve eleve = iterator.next();
             System.out.println(eleve + "\n");
         }
+    }
+    public Eleve meilleurEleve(){
+        if (listeEleves != null && !listeEleves.isEmpty())
+            return Collections.max(listeEleves);
+        return null;
+    }
+    public void trierEleves(){
+        if (listeEleves != null && !listeEleves.isEmpty())
+              Collections.sort(listeEleves);
     }
 }

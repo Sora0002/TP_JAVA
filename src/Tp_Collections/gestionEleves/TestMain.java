@@ -15,17 +15,10 @@ public class TestMain {
         E2.ajouterNote(14);
         ge.ajouterEleve(E);
         ge.ajouterEleve(E2);
+        System.out.println(ge.nombre() + "\n");
         ge.lister();
 
-        int comparisonResult = E.compareTo(E2);
-        System.out.println("+++++++++++++++++++++++++++++++\n");
-        if (comparisonResult < 0) {
-            System.out.println(E.getNom() + " is smaller than " + E2.getNom());
-        } else if (comparisonResult > 0) {
-            System.out.println(E + " is greater than " + E2);
-        } else {
-            System.out.println(E + " is equal to " + 2);
-        }
+        System.out.println("the max is : " + ge.meilleurEleve());
 
     }
 }
